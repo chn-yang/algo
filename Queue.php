@@ -93,18 +93,20 @@ class Queue implements Iterator
 }
 
 $queue = new Queue();
-for ($i = 1; $i <= 5; $i++) {
+for ($i = 1; $i <= 10; $i++) {
     $queue->enqueue($i);
 }
 
 echo "length = " . $queue->length() . PHP_EOL;
 
-foreach ($queue as $value) {
-    var_dump($value);
-}
 
 for ($i = 1; $i <= 5; $i++) {
     if ($queue->length() !== 0) {
-        echo $queue->dequeue() . PHP_EOL;
+        echo $queue->dequeue() . "出队" . PHP_EOL;
     }
+}
+
+
+foreach ($queue as $value) {
+    var_dump($value);
 }

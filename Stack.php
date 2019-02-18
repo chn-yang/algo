@@ -58,8 +58,8 @@ class Stack implements Iterator
      */
     public function push($value)
     {
-        
-        if ($this->size == 0) { 
+
+        if ($this->size == 0) {
             $this->last = new Node();
             $this->last->value = $value;
             $this->position = $this->last;
@@ -91,18 +91,18 @@ class Stack implements Iterator
 }
 
 $stack = new Stack();
-for ($i = 1; $i <= 5; $i++) {
+for ($i = 1; $i <= 10; $i++) {
     $stack->push($i);
 }
 
 echo "length = " . $stack->length() . PHP_EOL;
 
-foreach ($stack as $value) {
-    var_dump($value);
-}
-
 for ($i = 1; $i <= 5; $i++) {
     if ($stack->length() !== 0) {
-        echo $stack->pop() . PHP_EOL;
+        echo $stack->pop() . "出栈" . PHP_EOL;
     }
+}
+
+foreach ($stack as $value) {
+    var_dump($value);
 }
