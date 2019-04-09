@@ -79,11 +79,12 @@ class Queue implements Iterator
 
     /**
      * 出队操作, 队列为空返回异常, first指向first->next
+     * @throws Exception
      */
     public function dequeue(): int
     {
         if ($this->isEmpty()) {
-            throw new \Exception("Queue is null");
+            throw new Exception("Queue is null");
         }
         $value = $this->first->value;
         $this->first = $this->first->next;
