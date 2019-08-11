@@ -1,0 +1,17 @@
+{
+  "name": "chnyang/algo",
+  "description": "algo practice",
+  "type": "project",
+  "authors": [
+    {
+      "name": "chnyang",
+      "email": "chn.yang@qq.com"
+    }
+  ],
+  "require": {},
+  "autoload": {
+    "psr-4": {
+      "algo\\": "src\\"
+    }
+  }
+}
