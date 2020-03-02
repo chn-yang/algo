@@ -59,7 +59,6 @@ function quick($arr)
     }
 
     $index = $length >> 1;
-    $flag = $arr[$index];
     $left = [];
     $right = [];
 
@@ -69,12 +68,12 @@ function quick($arr)
         }
         if ($arr[$i] < $arr[$index]) {
             $left[] = $arr[$i];
-        } elseif ($arr[$i] > $arr[$index]) {
+        } else {
             $right[] = $arr[$i];
         }
     }
 
-    return array_merge($left, [$arr[$index]], $right);
+    return array_merge(quick($left), [$arr[$index]], quick($right));
 }
 
 $length = 10000;
@@ -99,13 +98,10 @@ echo "插入排序算法耗费时间：" . ($end - $begin) . PHP_EOL;
 $begin = microtime(true);
 bubble($arr);
 $end = microtime(true);
-echo PHP_EOL . PHP_EOL . PHP_EOL . "冒泡排序算法耗费时间：" . ($end - $begin) . PHP_EOL;
+echo "冒泡排序算法耗费时间：" . ($end - $begin) . PHP_EOL;
 
 // 选择排序算法
 $begin = microtime(true);
 select($arr);
 $end = microtime(true);
 echo "选择排序算法耗费时间：" . ($end - $begin) . PHP_EOL . PHP_EOL . PHP_EOL;
-
-
-
